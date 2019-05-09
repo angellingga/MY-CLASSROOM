@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.android.myclassroom.AdapterData;
+import com.example.android.myclassroom.AdapterDataKelas;
 import com.example.android.myclassroom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,10 +33,10 @@ public class HomeJkelasActivity extends Activity {
     //instance for rv
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
-    private ArrayList<modelData> itemList;
-    //private AdapterData mAdapter;
+    private ArrayList<kelasdata> itemList;
+    //private KelasData mAdapter;
     private static final String TAG = HomeJkelasActivity.class.getSimpleName();
-    private AdapterData mAdapter;
+    private AdapterDataKelas mAdapter;
 
 
 
@@ -44,14 +45,14 @@ public class HomeJkelasActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_jkelas);
-        itemList = new ArrayList<modelData>();
+        itemList = new ArrayList<kelasdata>();
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         //recycler
         RecyclerView recyclerView = findViewById(R.id.RecyclerView);
 
-        mAdapter = new AdapterData(itemList);
+        mAdapter = new AdapterDataKelas(itemList);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeJkelasActivity.this);
 
@@ -71,7 +72,7 @@ public class HomeJkelasActivity extends Activity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                mAdapter.addItem(new modelData(document.getString("nama_matakuliah"),
+                                mAdapter.addItem(new kelasdata(document.getString("nama_matakuliah"),
                                         document.getString("jadwal_kelas"),
                                         document.getString("dosen"), document.getString("ruangan")));
                                 Log.d(TAG,document.getId() + " => " + document.getData());

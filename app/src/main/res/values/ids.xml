@@ -2,4 +2,7 @@
 <resources>
     <item name="namaMatakuliah" type="id" />
     <item name="jadwalKelas" type="id" />
+    <item name="namaruangan" type="id" />
+    <item name="namaRuangan" type="id" />
+    <item name="namaDosen" type="id" />
 </resources>
