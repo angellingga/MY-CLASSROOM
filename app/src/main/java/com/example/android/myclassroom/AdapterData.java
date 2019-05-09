@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class AdapterData extends RecyclerView.Adapter<AdapterData.viewHolder>{
 
     ArrayList<modelData> mlist = new ArrayList<modelData>();
+    //this is a comment test
     interface onclick{
         void onClick(modelData dataModel);
     }
