@@ -15,17 +15,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class addPracticumActivity extends AppCompatActivity {
+public class addJkelasActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private FirebaseAuth auth;
     private FirebaseFirestore database;
     Button tambah;
-    TextView namapraktikum,lab,shift,jadwalpraktikum;
+    TextView namamatakuliah,ruangan,dosen,jadwalkelas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_practicum);
+        setContentView(R.layout.activity_add_jkelas);
 
         storage = FirebaseStorage.getInstance();
         database = FirebaseFirestore.getInstance();
@@ -34,23 +34,23 @@ public class addPracticumActivity extends AppCompatActivity {
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(addPracticumActivity.this, HomePracticumActivity.class);
+                Intent intent = new Intent(addJkelasActivity.this, HomeJkelasActivity.class);
                 startActivity(intent);
                 tambahMenu();
             }
         });
     }
     public void tambahMenu(){
-        namapraktikum = findViewById(R.id.inputPraktikum);
-        lab = findViewById(R.id.inputLab);
-        shift = findViewById(R.id.inputDosen);
-        jadwalpraktikum = findViewById(R.id.inputJadwal);
+        namamatakuliah = findViewById(R.id.inputMatakuliah);
+        ruangan = findViewById(R.id.inputLab);
+        dosen = findViewById(R.id.inputDosen);
+        jadwalkelas = findViewById(R.id.inputJadwal);
         Map<String,String> menuMap = new HashMap<>();
-        menuMap.put("nama_praktikum",namapraktikum.getText().toString().trim());
-        menuMap.put("lab",lab.getText().toString().trim());
-        menuMap.put("shift",shift.getText().toString().trim());
-        menuMap.put("jadwal_praktikum",jadwalpraktikum.getText().toString().trim());
-        database.collection("jadwal_praktikum").add(menuMap);
+        menuMap.put("nama_matakuliah",namamatakuliah.getText().toString().trim());
+        menuMap.put("ruangan",ruangan.getText().toString().trim());
+        menuMap.put("dosen",dosen.getText().toString().trim());
+        menuMap.put("jadwal_kelas",jadwalkelas.getText().toString().trim());
+        database.collection("jadwal_kelas").add(menuMap);
 
 
     }

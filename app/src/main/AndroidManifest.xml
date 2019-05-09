@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.addPracticumActivity" />
         <activity android:name=".Activities.HomePracticumActivity" />
+        <activity android:name=".Activities.addJkelasActivity" />
+        <activity android:name=".Activities.HomeJkelasActivity" />
         <activity android:name=".Activities.SignUp" />
         <activity android:name=".SplashActivity">
             <intent-filter>

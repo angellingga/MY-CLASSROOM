@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.android.myclassroom.R;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageView pracsched;
+    ImageView pracsched, classched;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, HomePracticumActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        classched = findViewById(R.id.view_class_sched);
+        classched.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, HomeJkelasActivity.class);
                 startActivity(intent);
             }
         });

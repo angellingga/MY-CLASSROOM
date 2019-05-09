@@ -1,38 +1,38 @@
 {
   "project_info": {
-    "project_number": "890910871607",
-    "firebase_url": "https://tugasbesar-d089f.firebaseio.com",
-    "project_id": "tugasbesar-d089f",
-    "storage_bucket": "tugasbesar-d089f.appspot.com"
+    "project_number": "996287942572",
+    "firebase_url": "https://myclassroom-5d3f5.firebaseio.com",
+    "project_id": "myclassroom-5d3f5",
+    "storage_bucket": "myclassroom-5d3f5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:890910871607:android:fbec953dd86c0852",
+        "mobilesdk_app_id": "1:996287942572:android:fbec953dd86c0852",
         "android_client_info": {
           "package_name": "com.example.android.myclassroom"
         }
       },
       "oauth_client": [
         {
-          "client_id": "890910871607-oimjhrs424tci18gula9p928ig59fvh1.apps.googleusercontent.com",
+          "client_id": "996287942572-9lge3vthu4pj2gd6otmrgoat0v7a3hmk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.android.myclassroom",
-            "certificate_hash": "b1b5fbddd5dfdab67af6aa65de0d7b346ab5f5af"
+            "certificate_hash": "ddb792b12153cce48157644de62d4a3295f34e24"
           }
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAPO0f7chOu4D32xapsKUO2ouCrC7lwnw4"
+          "current_key": "AIzaSyBGT07NyreQ7AArSYoKVwtRDWtVzfhltUQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "890910871607-34ln4ojmlrfd705gvqpvhe6vfvvgvc4g.apps.googleusercontent.com",
+              "client_id": "996287942572-srtu5dg00kcl5ve7689fa5tp6op1bskt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
