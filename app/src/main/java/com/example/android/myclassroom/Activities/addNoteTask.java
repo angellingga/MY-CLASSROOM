@@ -15,17 +15,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class addPracticumActivity extends AppCompatActivity {
+public class addNoteTask extends AppCompatActivity {
     private FirebaseStorage storage;
     private FirebaseAuth auth;
     private FirebaseFirestore database;
     Button tambah;
-    TextView namapraktikum,lab,shift,jadwalpraktikum;
+    TextView Matakuliah, Deskripsi, Pengumpulan, Notetask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_practicum);
+        setContentView(R.layout.activity_add_notetask);
 
         storage = FirebaseStorage.getInstance();
         database = FirebaseFirestore.getInstance();
@@ -34,24 +34,24 @@ public class addPracticumActivity extends AppCompatActivity {
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(addPracticumActivity.this, HomePracticumActivity.class);
+                Intent intent = new Intent(addNoteTask.this,HomeNoteTask.class);
                 startActivity(intent);
                 tambahMenu();
             }
         });
     }
     public void tambahMenu(){
-        namapraktikum = findViewById(R.id.inputPraktikum);
-        lab = findViewById(R.id.inputLab);
-        shift = findViewById(R.id.inputShift);
-        jadwalpraktikum = findViewById(R.id.inputJadwal);
+        Matakuliah = findViewById(R.id.Matakuliah);
+        Deskripsi = findViewById(R.id.Deskripsi);
+        Pengumpulan = findViewById(R.id.Pengumpulan);
         Map<String,String> menuMap = new HashMap<>();
-        menuMap.put("nama_praktikum",namapraktikum.getText().toString().trim());
-        menuMap.put("lab",lab.getText().toString().trim());
-        menuMap.put("shift",shift.getText().toString().trim());
-        menuMap.put("jadwal_praktikum",jadwalpraktikum.getText().toString().trim());
-        database.collection("jadwal_praktikum").add(menuMap);
+        menuMap.put("Mata_kuliah",Matakuliah.getText().toString().trim());
+        menuMap.put("Deskripsi",Deskripsi.getText().toString().trim());
+        menuMap.put("Pengumpulan",Pengumpulan.getText().toString().trim());
+        menuMap.put("Notetask",Notetask.getText().toString().trim());
+        database.collection("Notetask").add(menuMap);
 
 
     }
 }
+
