@@ -3,4 +3,6 @@
     <color name="colorPrimary">#acaba7</color>
     <color name="colorPrimaryDark">#acaba7</color>
     <color name="colorAccent">#acaba7</color>
+    <color name="lightgray">#ededed</color>
+    <color name="darkergray"></color>
 </resources>
