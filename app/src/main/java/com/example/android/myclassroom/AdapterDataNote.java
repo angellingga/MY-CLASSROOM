@@ -7,18 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.android.myclassroom.Activities.modelData;
-
+import com.example.android.myclassroom.Activities.datanote;
 
 import java.util.ArrayList;
 
-public class AdapterData extends RecyclerView.Adapter<AdapterData.viewHolder>{
+public class AdapterDataNote extends RecyclerView.Adapter<AdapterDataNote.viewHolder>{
 
-    ArrayList<modelData> mlist = new ArrayList<modelData>();
+    ArrayList<datanote> mlist = new ArrayList<datanote>();
     interface onclick{
-        void onClick(modelData dataModel);
+        void onClick(datanote notedata);
     }
-    public AdapterData(ArrayList<modelData> mlist){
+    public AdapterDataNote(ArrayList<datanote> mlist){
         this.mlist = mlist;
     }
 
@@ -31,10 +30,11 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.viewHolder>{
     }
     @Override
     public void onBindViewHolder(viewHolder viewholder,final int i){
-        viewholder.txtnamapraktikum.setText(mlist.get(i).getNamapraktikum());
-        viewholder.txtjadwalpraktikum.setText(mlist.get(i).getNamajadwalpraktikum());
+        viewholder.txtMatakuliah.setText(mlist.get(i).getMatakuliah());
+        viewholder.txtDeskripsi.setText(mlist.get(i).getDeskripsi());
+        viewholder.txtPengumpulan.setText(mlist.get(i).getPengumpulan());
     }
-    public  void addItem(modelData data){
+    public  void addItem(datanote data){
         mlist.add(data);
         notifyDataSetChanged();
     }
@@ -43,11 +43,15 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.viewHolder>{
         return (mlist != null) ? mlist.size() : 0;
     }
     public class viewHolder extends RecyclerView.ViewHolder{
-        private TextView txtnamapraktikum,txtjadwalpraktikum;
+        private TextView txtMatakuliah, txtDeskripsi, txtPengumpulan;
         public viewHolder(View itemView){
             super(itemView);
-            txtnamapraktikum = itemView.findViewById(R.id.namaPraktikum);
-            txtjadwalpraktikum = itemView.findViewById(R.id.jadwalPraktikum);
+            txtMatakuliah = itemView.findViewById(R.id.Matakuliah);
+            txtDeskripsi = itemView.findViewById(R.id.Deskripsi);
+            txtPengumpulan = itemView.findViewById(R.id.Pengumpulan);
+
         }
     }
 }
+
+

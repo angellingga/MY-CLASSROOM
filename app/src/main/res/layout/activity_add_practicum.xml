@@ -9,16 +9,16 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="146dp"
-        android:layout_height="122dp"
+        android:layout_height="126dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputPraktikum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/practicum" />
 
     <EditText
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -35,7 +36,9 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/inputLab"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.95" />
 
     <EditText
         android:id="@+id/inputLab"
@@ -49,12 +52,12 @@
         android:ems="10"
         android:hint="Lab"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/inputDosen"
+        app:layout_constraintBottom_toTopOf="@+id/inputShift"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/inputDosen"
+        android:id="@+id/inputShift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -93,7 +96,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="140dp"
         android:text="Tambah"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.android.myclassroom.Activities.kelasdata;
 
-
-import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class AdapterDataKelas extends RecyclerView.Adapter<AdapterDataKelas.viewHolder>{

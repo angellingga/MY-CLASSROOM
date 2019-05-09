@@ -1,17 +1,17 @@
 package com.example.android.myclassroom.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.android.myclassroom.AdapterDataKelas;
+import com.example.android.myclassroom.AdapterDataNote;
 import com.example.android.myclassroom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,8 +23,8 @@ import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 
-public class HomeJkelasActivity extends Activity {
-    //instance for firebase
+public class HomeNoteTask extends AppCompatActivity {
+
     private FirebaseStorage storage;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
@@ -32,10 +32,10 @@ public class HomeJkelasActivity extends Activity {
     //instance for rv
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
-    private ArrayList<kelasdata> itemList;
-    //private KelasData mAdapter;
-    private static final String TAG = HomeJkelasActivity.class.getSimpleName();
-    private AdapterDataKelas mAdapter;
+    private ArrayList<datanote> itemList;
+    //private AdapterData mAdapter;
+    private static final String TAG = HomeNoteTask.class.getSimpleName();
+    private AdapterDataNote mAdapter;
 
 
 
@@ -43,17 +43,17 @@ public class HomeJkelasActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_jkelas);
-        itemList = new ArrayList<kelasdata>();
+        setContentView(R.layout.activity_home_notetask);
+        itemList = new ArrayList<datanote>();
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         //recycler
         RecyclerView recyclerView = findViewById(R.id.RecyclerView);
 
-        mAdapter = new AdapterDataKelas(itemList);
+        mAdapter = new AdapterDataNote(itemList);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeJkelasActivity.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HomeNoteTask.this);
 
         recyclerView.setLayoutManager(layoutManager);
 
@@ -66,14 +66,13 @@ public class HomeJkelasActivity extends Activity {
             public void onClick(View v) {
                 //itemList.clear();
                 itemList.clear();
-                db.collection("jadwal_kelas").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                db.collection("Notetask").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                mAdapter.addItem(new kelasdata(document.getString("nama_matakuliah"),
-                                        document.getString("jadwal_kelas"),
-                                        document.getString("dosen"), document.getString("ruangan")));
+                                mAdapter.addItem(new datanote(document.getString("Matakuliah"),
+                                        document.getString("Deskripsi"), document.getString("Pengumpulan")));
                                 Log.d(TAG,document.getId() + " => " + document.getData());
                             }
                         } else {
@@ -88,7 +87,7 @@ public class HomeJkelasActivity extends Activity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeJkelasActivity.this, addJkelasActivity.class);
+                Intent intent = new Intent(HomeNoteTask.this, addNoteTask.class);
                 startActivity(intent);
             }
         });

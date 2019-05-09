@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="namaMatakuliah" type="id" />
-    <item name="jadwalKelas" type="id" />
-    <item name="namaruangan" type="id" />
     <item name="namaRuangan" type="id" />
+    <item name="jadwalKelas" type="id" />
     <item name="namaDosen" type="id" />
 </resources>
