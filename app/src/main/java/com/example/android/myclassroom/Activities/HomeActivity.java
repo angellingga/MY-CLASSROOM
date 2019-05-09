@@ -30,13 +30,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         classched = findViewById(R.id.view_class_sched);
-        classched.setOnClickListener(new View.OnClickListener(){
+        classched.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, HomeJkelasActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
+

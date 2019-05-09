@@ -42,7 +42,7 @@ public class addJkelasActivity extends AppCompatActivity {
     }
     public void tambahMenu(){
         namamatakuliah = findViewById(R.id.inputMatakuliah);
-        ruangan = findViewById(R.id.inputLab);
+        ruangan = findViewById(R.id.inputRuangan);
         dosen = findViewById(R.id.inputDosen);
         jadwalkelas = findViewById(R.id.inputJadwal);
         Map<String,String> menuMap = new HashMap<>();
