@@ -87,12 +87,15 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
+
                 <ImageView
+                    android:id="@+id/view_class_sched"
                     android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_height="63dp"
                     android:background="@drawable/circlebackgroundgray"
+                    android:padding="10dp"
                     android:src="@drawable/ic_date_range_black_24dp"
-                    android:padding="10dp"/>
+                    tools:srcCompat="@drawable/jkelas" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -205,5 +208,10 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>
-
+<Button
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_logout"
+    android:text="Logout"/>
 </LinearLayout>
